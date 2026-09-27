@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRAVELAWI</title>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="loading-page">
+
+    <div class="loading-container">
+
+        <!-- Logo -->
+
+        <img src="images/travelawi-logo.png"
+             alt="TRAVELAWI Logo"
+             class="loading-logo">
+
+        <!-- Title -->
+
+        <h1 class="loading-title">
+            Explore Malawi Beautifully
+        </h1>
+
+        <!-- Tagline -->
+
+        <p class="loading-text">
+            Your Journey, Thoughtfully Planned
+        </p>
+
+        <!-- Loading Spinner -->
+
+        <div class="spinner-border text-warning loading-spinner"
+             role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <!-- Loading Message -->
+
+        <p class="loading-message">
+            Loading...
+        </p>
+
+    </div>
+
+    <!-- jQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            setTimeout(function () {
+
+                $(".loading-container").fadeOut(800, function () {
+
+                    window.location.href = "welcome.html";
+
+                });
+
+            }, 2500);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

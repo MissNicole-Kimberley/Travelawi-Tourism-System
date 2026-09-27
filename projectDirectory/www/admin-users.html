@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRAVELAWI | Manage Users</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="js/logout.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/admin-users.js"></script>
+
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<div data-role="page">
+
+
+<!-- MENU -->
+
+<div data-role="panel"
+id="menuPanel"
+data-display="overlay"
+data-position="left">
+
+
+<div class="text-center mb-3">
+
+<img src="images/travelawi-logo.png"
+class="panel-logo">
+
+<h3>TRAVELAWI</h3>
+
+<small>Admin Panel</small>
+
+</div>
+
+
+
+<ul data-role="listview">
+
+
+<li><a href="admin-dashboard.html">Dashboard</a></li>
+
+<li><a href="admin-users.html">Manage Users</a></li>
+
+<li><a href="admin-destinations.html">Destinations</a></li>
+
+<li><a href="admin-accommodation.html">Accommodation</a></li>
+
+<li><a href="admin-tours.html">Tours</a></li>
+
+<li><a href="admin-bookings.html">Bookings</a></li>
+
+<li><a href="admin-reviews.html">Reviews</a></li>
+
+<li><a href="admin-reports.html">Reports</a></li>
+
+<li><a href="#" id="logoutBtn">Logout</a></li>
+
+
+</ul>
+
+
+</div>
+
+
+<header class="accommodation-header">
+
+
+<a href="#menuPanel"
+class="menu-toggle">
+
+<i class="bi bi-list"></i>
+
+</a>
+
+
+<div>
+
+<h2>
+
+<i class="bi bi-people-fill"></i>
+
+Manage Users
+
+</h2>
+
+
+<p>
+View and manage registered TRAVELAWI users.
+</p>
+
+
+</div>
+
+
+</header>
+
+
+<button class="dashboard-btn mb-4" id="addUserBtn">
+
+<i class="bi bi-person-plus"></i>
+
+Add User
+
+</button>
+
+
+<main class="content-container">
+
+
+
+<div class="table-responsive">
+
+
+<table class="table table-hover user-table">
+
+
+<thead>
+
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Role</th>
+
+<th>Date Registered</th>
+
+<th>Action</th>
+
+</tr>
+
+
+</thead>
+
+
+<tbody id="usersContainer">
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+</main>
+
+<!-- Footer -->
+
+<footer class="dashboard-footer">
+
+<div class="footer-grid">
+
+<div>
+
+<h5>
+
+Quick Links
+
+</h5>
+
+<a href="admin-users.html">Manage Users</a>
+
+<a href="admin-accommodation.html">Manage Accommodation</a>
+
+<a href="admin-tours.html">Manage Tours</a>
+
+<a href="admin-reports.html">Reports</a>
+
+</div>
+
+<div>
+
+<h5>
+
+Contact
+
+</h5>
+
+ <!-- Location -->
+    <a href="https://www.google.com/maps/search/?api=1&query=Blantyre+Malawi"
+       target="_blank"
+       class="contact-btn">📍 Blantyre, Malawi</a>
+
+    <!-- Phone -->
+    <a href="tel:+265991273980" class="contact-btn">📞 +265 999 99 99 99</a>
+
+    <!-- Email -->
+    <a href="mailto:trav3lawi@gmail.com" class="contact-btn"> ✉️ trav3lawi@gmail.com</a>
+        </div>
+
+
+</div>
+
+<div>
+
+<h5>
+
+Follow Us
+
+</h5>
+
+<div class="social-buttons">
+
+    <a href="https://www.instagram.com/trave.lawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-instagram"></i> Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@trave.lawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-tiktok"></i> TikTok
+    </a>
+
+    <a href="https://twitter.com/travelawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-twitter-x"></i> Twitter (X)
+    </a>
+
+    <a href="https://linktr.ee/trave.lawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-link-45deg"></i> Linktree
+    </a>
+
+</div>
+
+<div class="row align-items-center justify-content-center text-center">
+
+© 2026 TRAVELAWI
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+<a href="admin-dashboard.html" 
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-grid-fill"></i>
+
+Dashboard
+
+</a>
+
+<a href="admin-users.html"
+   class="active"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-people-fill"></i>
+
+Manage Users
+
+</a>
+
+<a href="admin-reviews.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-star-fill"></i>
+
+Reviews
+
+</a>
+
+<a href="admin-reports.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-file-earmark-bar-graph-fill"></i>
+
+Reports
+
+</a>
+
+<a href="#menuPanel">
+
+<i class="bi bi-list"></i>
+
+<span>More</span>
+
+</a>
+
+</nav>
+
+<div class="modal fade" id="userModal">
+
+
+<div class="modal-dialog">
+
+
+<div class="modal-content">
+
+
+<div class="modal-header">
+
+<h5>Add User</h5>
+
+<button class="btn-close"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+
+
+<div class="modal-body">
+
+
+<form id="userForm">
+
+
+<input 
+id="fullname"
+class="form-control mb-3"
+placeholder="Full Name"
+required>
+
+
+<input 
+id="email"
+type="email"
+class="form-control mb-3"
+placeholder="Email"
+required>
+
+
+
+<input 
+id="password"
+type="password"
+class="form-control mb-3"
+placeholder="Password"
+required>
+
+
+
+
+<select id="role"
+class="form-control mb-3">
+
+
+<option value="Tourist">
+Tourist
+</option>
+
+
+<option value="Accommodation Owner">
+Accommodation Owner
+</option>
+
+
+<option value="Travelawi Team">
+Travelawi Team
+</option>
+
+
+</select>
+
+
+
+<button class="dashboard-btn w-100">
+
+Save User
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>

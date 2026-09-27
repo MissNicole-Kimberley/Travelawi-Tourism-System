@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRAVELAWI | Reports</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/jquery.mobile.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+<script src="js/admin-reports.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/logout.js"></script>
+
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<div data-role="page">
+
+
+
+<!-- MENU -->
+
+<div data-role="panel"
+id="menuPanel"
+data-display="overlay"
+data-position="left">
+
+
+<div class="text-center mb-3">
+
+<img src="images/travelawi-logo.png"
+class="panel-logo">
+
+<h3>TRAVELAWI</h3>
+
+<small>Admin Panel</small>
+
+</div>
+
+
+
+<ul data-role="listview">
+
+
+<li><a href="admin-dashboard.html">Dashboard</a></li>
+
+<li><a href="admin-users.html">Users</a></li>
+
+<li><a href="admin-destinations.html">Destinations</a></li>
+
+<li><a href="admin-accommodation.html">Accommodation</a></li>
+
+<li><a href="admin-tours.html">Tours</a></li>
+
+<li><a href="admin-bookings.html">Bookings</a></li>
+
+<li><a href="admin-reviews.html">Reviews</a></li>
+
+<li><a href="admin-reports.html">Reports</a></li>
+
+<li><a href="#" id="logoutBtn">Logout</a></li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<header class="accommodation-header">
+
+
+<a href="#menuPanel"
+class="menu-toggle">
+
+<i class="bi bi-list"></i>
+
+</a>
+
+
+<div>
+
+<h2>
+
+<i class="bi bi-file-earmark-bar-graph-fill"></i>
+
+System Reports
+
+</h2>
+
+
+<p>
+TRAVELAWI platform performance overview
+</p>
+
+
+</div>
+
+
+</header>
+
+<div class="container mt-5" id="reportContent">
+
+<!-- REPORT HEADER -->
+
+<div class="text-center mb-5 report-header">
+
+<img src="images/travelawi-logo.png"
+style="width:120px;">
+
+
+<h1>
+TRAVELAWI SYSTEM REPORT
+</h1>
+
+
+<p>
+Generated:
+<span id="reportDate"></span>
+</p>
+
+
+</div>
+
+<!-- SUMMARY -->
+
+<div class="row g-4">
+
+
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<i class="bi bi-people-fill"></i>
+
+<h4>Total Users</h4>
+
+<h2 id="totalUsers">0</h2>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+<h4>Destinations</h4>
+
+<h2 id="totalDestinations">0</h2>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<i class="bi bi-building"></i>
+
+<h4>Accommodation</h4>
+
+<h2 id="totalAccommodation">0</h2>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<i class="bi bi-bus-front-fill"></i>
+
+<h4>Tours</h4>
+
+<h2 id="totalTours">0</h2>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+<div class="dashboard-card">
+
+<i class="bi bi-calendar-check-fill"></i>
+
+<h4>Bookings</h4>
+
+<h2 id="totalBookings">0</h2>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row mt-5">
+
+
+
+<div class="col-md-6">
+
+
+<div class="report-box">
+
+
+<h3>
+❤️ Most Favourited
+</h3>
+
+
+<ul id="favouriteList"></ul>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-6">
+
+
+<div class="report-box">
+
+
+<h3>
+🔥 Most Booked
+</h3>
+
+
+<ul id="bookedList"></ul>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- USERS REPORT -->
+
+<div class="report-box mt-5">
+
+<h3>
+<i class="bi bi-people-fill"></i>
+All Users
+</h3>
+
+
+<table class="table table-striped" id="usersReport">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Role</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+</tbody>
+
+
+</table>
+
+</div>
+
+
+
+<!-- BOOKINGS REPORT -->
+
+<div class="report-box mt-5">
+
+<h3>
+<i class="bi bi-calendar-check"></i>
+All Bookings
+</h3>
+
+
+<table class="table table-striped" id="bookingReport">
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>Item</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+<!-- ACCOMMODATION REPORT -->
+
+<div class="report-box mt-5">
+
+<h3>
+<i class="bi bi-building"></i>
+Accommodation
+</h3>
+
+
+<table class="table table-striped" id="accommodationReport">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Location</th>
+
+<th>Owner</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+</tbody>
+
+
+</table>
+
+</div>
+
+<button class="dashboard-btn"
+onclick="window.print()">
+
+<i class="bi bi-printer"></i>
+
+Print Report
+
+</button>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+<a href="admin-dashboard.html" 
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-grid-fill"></i>
+
+Dashboard
+
+</a>
+
+<a href="admin-users.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-people-fill"></i>
+
+Manage Users
+
+</a>
+
+<a href="admin-reviews.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-star-fill"></i>
+
+Reviews
+
+</a>
+
+<a href="admin-reports.html"
+   class="active"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-file-earmark-bar-graph-fill"></i>
+
+Reports
+
+</a>
+
+<a href="#menuPanel">
+
+<i class="bi bi-list"></i>
+
+<span>More</span>
+
+</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

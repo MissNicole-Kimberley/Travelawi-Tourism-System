@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRAVELAWI | Register</title>
+
+
+<!-- Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<section class="auth-section">
+
+
+<div class="auth-card">
+
+
+<div class="text-center mb-4">
+
+
+<img src="images/travelawi-logo.png"
+class="auth-logo"
+alt="TRAVELAWI Logo">
+
+
+<h2>Create Your Account</h2>
+
+
+<p>
+Join TRAVELAWI and discover Malawi beautifully.
+</p>
+
+
+</div>
+
+
+
+
+<form id="registerForm " onsubmit="register(event)">
+
+
+<!-- Full Name -->
+
+<div class="mb-3">
+
+<label for="fullname">
+Full Name
+</label>
+
+
+<input type="text"
+id="fullname"
+class="form-control"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+
+
+
+<!-- Email -->
+
+<div class="mb-3">
+
+<label for="email">
+Email Address
+</label>
+
+
+<input type="email"
+id="email"
+class="form-control"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+
+
+<!-- Password -->
+
+<div class="mb-3">
+
+<label for="password">
+Password
+</label>
+
+
+<input type="password"
+id="password"
+class="form-control"
+placeholder="Create password"
+minlength="8"
+required>
+
+</div>
+
+
+
+
+<!-- Confirm Password -->
+
+<div class="mb-3">
+
+<label for="confirmPassword">
+Confirm Password
+</label>
+
+
+<input type="password"
+id="confirmPassword"
+class="form-control"
+placeholder="Confirm password"
+required>
+
+</div>
+
+
+
+
+
+<!-- Account Type -->
+
+<div class="mb-3">
+
+
+<label for="role">
+Account Type
+</label>
+
+
+<select id="role"
+class="form-select"
+required>
+
+
+<option value="">
+Select account type
+</option>
+
+
+<option value="Tourist">
+Tourist
+</option>
+
+
+<option value="Accommodation Owner">
+Accommodation Owner
+</option>
+
+<option value="Travelawi Team">
+Travelawi Team
+</option>
+
+</select>
+
+
+</div>
+
+
+
+
+<!-- Terms -->
+
+<div class="form-check mb-3">
+
+<input class="form-check-input"
+type="checkbox"
+id="terms"
+required>
+
+
+<label class="form-check-label"
+for="declaration">
+
+I confirm that the information provided above is accurate and complete. 
+I understand that I may be held responsible for any false or misleading information submitted.
+
+</label>
+
+
+</div>
+
+
+
+
+<button type="submit"
+class="btn register-btn w-100">
+
+Create Account
+
+</button>
+
+
+
+
+
+<p class="text-center mt-4">
+
+Already have an account?
+
+<a href="login.html">
+Login
+</a>
+
+
+</p>
+
+
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<script src="js/register.js"></script>
+
+
+</body>
+
+</html>

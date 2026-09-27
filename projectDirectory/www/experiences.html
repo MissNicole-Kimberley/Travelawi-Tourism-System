@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRAVELAWI | Experiences</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/tourist.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/favourites.js"></script>
+
+</head>
+
+<body class="dashboard-page">
+
+<div data-role="page">
+
+<!-- ==========================
+        MOBILE OVERLAY
+=========================== -->
+
+<div class="sidebar-overlay"></div>
+
+<!-- ==========================
+        Slide out menu
+=========================== -->
+<div data-role="panel"
+     id="menuPanel"
+     data-display="overlay"
+     data-position="left">
+
+    <div class="text-center mb-3">
+
+        <img src="images/travelawi-logo.png"
+             class="panel-logo">
+
+        <h3>
+
+            TRAVELAWI
+
+        </h3>
+
+    </div>
+
+    <ul data-role="listview">
+
+        <li><a href="tourist-dashboard.html" data-transition="slide" data-ajax="false">Dashboard</a></li>
+
+        <li><a href="destinations.html" data-transition="slide" data-ajax="false">Destinations</a></li>
+
+        <li><a href="accommodation.html" data-transition="slide" data-ajax="false">Accommodation</a></li>
+
+        <li><a href="tours.html" data-transition="slide" data-ajax="false">Tours</a></li>
+
+        <li><a href="experiences.html" data-transition="slide" data-ajax="false">Experiences</a></li>
+
+        <li><a href="bookings.html" data-transition="slide" data-ajax="false">Bookings</a></li>
+
+        <li><a href="favourites.html" data-transition="slide" data-ajax="false">Favourites</a></li>
+
+        <li><a href="reviews.html" data-transition="slide" data-ajax="false">Reviews</a></li>
+
+        <li><a href="#" id="logoutBtn" data-transition="slide" data-ajax="false">Logout</a></li>
+
+    </ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<header class="accommodation-header">
+
+ <a href="#menuPanel"
+       class="menu-toggle"
+       data-transition="slide">
+
+        <i class="bi bi-list"></i>
+
+    </a>
+
+<div>
+
+<h2>Discover Experiences</h2>
+
+<p>
+Create unforgettable memories with unique experiences across Malawi.
+</p>
+
+</div>
+
+</header>
+
+
+<!-- Search -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="experienceSearch"
+placeholder="Search experiences...">
+
+<button>
+
+<i class="bi bi-search"></i>
+
+</button>
+
+</div>
+
+<!-- Cards -->
+
+<div class="experience-grid">
+
+<!-- =========================
+      LIWONDE NATIONAL PARK SAFARI
+========================= -->
+<div class="experience-card">
+
+
+<img src="http://localhost:3000/uploads/experiences/liwonde-nat.jpg"
+alt="Liwonde National Park">
+
+
+
+<div class="experience-info">
+
+
+<span class="rating">
+⭐ 4.9
+</span>
+
+
+<h3>
+Liwonde National Park Safari
+</h3>
+
+
+<p class="location">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+Machinga
+
+</p>
+
+
+<p>
+
+Experience wildlife adventures through boat safaris, game drives and unforgettable encounters with elephants and hippos.
+
+</p>
+
+
+
+<div class="experience-more">
+
+
+<h5>
+Activities
+</h5>
+
+
+<ul>
+
+<li>Boat Safari</li>
+
+<li>Game Drives</li>
+
+<li>Wildlife Photography</li>
+
+<li>Bird Watching</li>
+
+</ul>
+
+
+
+<h5>
+Best Time To Visit
+</h5>
+
+
+<p>
+May - October
+</p>
+
+
+
+<h5>
+Location
+</h5>
+
+
+
+<iframe
+
+src="https://www.google.com/maps?q=Liwonde+National+Park+Malawi&output=embed"
+
+width="100%"
+
+height="250"
+
+style="border:0;border-radius:15px;"
+
+loading="lazy">
+
+</iframe>
+
+
+</div>
+
+
+
+<button class="dashboard-btn details-btn">
+
+Explore Experience
+
+</button>
+
+<button
+class="fav-btn"
+
+data-name="Liwonde National Park Safari"
+
+data-type="Experience"
+
+data-image="http://localhost:3000/uploads/experiences/liwonde-nat.jpg">
+
+<i class="bi bi-heart"></i>
+
+Add to Favourites
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+      MAJETE WILDLIFE RESERVE
+========================= -->
+
+<div class="experience-card">
+
+
+<img src="http://localhost:3000/uploads/experiences/majete.jpg"
+alt="Majete Wildlife Reserve">
+
+
+<div class="experience-info">
+
+
+<span class="rating">
+⭐ 4.8
+</span>
+
+
+<h3>
+Majete Wildlife Safari
+</h3>
+
+
+<p class="location">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+Chikwawa
+
+</p>
+
+
+<p>
+
+Explore Malawi's conservation success story with amazing wildlife and guided safari experiences.
+
+</p>
+
+
+
+<div class="experience-more">
+
+
+<h5>
+Activities
+</h5>
+
+
+<ul>
+
+<li>Big Five Safari</li>
+
+<li>Nature Walks</li>
+
+<li>Wildlife Viewing</li>
+
+<li>Photography</li>
+
+</ul>
+
+
+
+<h5>
+Best Time To Visit
+</h5>
+
+
+<p>
+May - October
+</p>
+
+
+
+<h5>
+Location
+</h5>
+
+
+
+<iframe
+
+src="https://www.google.com/maps?q=Majete+Wildlife+Reserve+Malawi&output=embed"
+
+width="100%"
+
+height="250"
+
+style="border:0;border-radius:15px;"
+
+loading="lazy">
+
+</iframe>
+
+
+
+</div>
+
+
+
+<button class="dashboard-btn details-btn">
+
+Explore Experience
+
+</button>
+
+<button
+class="fav-btn"
+
+data-name="Majete Wildlife Safari"
+
+data-type="Experience"
+
+data-image="http://localhost:3000/uploads/experiences/majete.jpg">
+
+<i class="bi bi-heart"></i>
+
+Add to Favourites
+
+</button>
+
+</div>
+
+
+</div>
+
+<!-- =========================
+      SATEMWA TEA ESTATE
+========================= -->
+
+<div class="experience-card">
+
+
+<img src="http://localhost:3000/uploads/experiences/satemwa.jpg"
+alt="Satemwa Tea Estate">
+
+
+<div class="experience-info">
+
+
+<span class="rating">
+⭐ 4.7
+</span>
+
+
+<h3>
+Satemwa Tea Estate
+</h3>
+
+
+<p class="location">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+Thyolo
+
+</p>
+
+
+<p>
+
+Enjoy peaceful tea plantations, tea tasting experiences and beautiful highland scenery.
+
+</p>
+
+
+
+<div class="experience-more">
+
+
+<h5>
+Activities
+</h5>
+
+
+<ul>
+
+<li>Tea Tasting</li>
+
+<li>Plantation Tours</li>
+
+<li>Nature Walks</li>
+
+<li>Photography</li>
+
+</ul>
+
+
+
+<h5>
+Best Time To Visit
+</h5>
+
+
+<p>
+April - November
+</p>
+
+
+
+<h5>
+Location
+</h5>
+
+
+
+<iframe
+
+src="https://www.google.com/maps?q=Satemwa+Tea+Estate+Malawi&output=embed"
+
+width="100%"
+
+height="250"
+
+style="border:0;border-radius:15px;"
+
+loading="lazy">
+
+</iframe>
+
+
+</div>
+
+
+
+<button class="dashboard-btn details-btn">
+
+Explore Experience
+
+</button>
+
+<button
+class="fav-btn"
+
+data-name="Satemwa Tea Estate"
+
+data-type="Experience"
+
+data-image="http://localhost:3000/uploads/experiences/satemwa.jpg">
+
+<i class="bi bi-heart"></i>
+
+Add to Favourites
+
+</button>
+
+</div>
+
+
+</div>
+<!-- =========================
+      CHONGONI ROCK ART
+========================= -->
+
+<div class="experience-card">
+
+
+<img src="http://localhost:3000/uploads/experiences/chongoni.jpg"
+alt="Chongoni Rock Art">
+
+
+<div class="experience-info">
+
+
+<span class="rating">
+⭐ 4.6
+</span>
+
+
+<h3>
+Chongoni Rock Art Experience
+</h3>
+
+
+<p class="location">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+Dedza
+
+</p>
+
+
+<p>
+
+Discover ancient rock art sites and learn about Malawi's cultural heritage.
+
+</p>
+
+
+
+<div class="experience-more">
+
+
+<h5>
+Activities
+</h5>
+
+
+<ul>
+
+<li>Rock Art Tours</li>
+
+<li>Cultural Stories</li>
+
+<li>Guided Walks</li>
+
+<li>Photography</li>
+
+</ul>
+
+
+
+<h5>
+Best Time To Visit
+</h5>
+
+
+<p>
+All year round
+</p>
+
+
+
+<h5>
+Location
+</h5>
+
+
+
+<iframe
+
+src="https://www.google.com/maps?q=Chongoni+Rock+Art+Malawi&output=embed"
+
+width="100%"
+
+height="250"
+
+style="border:0;border-radius:15px;"
+
+loading="lazy">
+
+</iframe>
+
+
+
+</div>
+
+
+
+<button class="dashboard-btn details-btn">
+
+Explore Experience
+
+</button>
+
+
+<button
+class="fav-btn"
+
+data-name="Chongoni Rock Art Experience"
+
+data-type="Experience"
+
+data-image="http://localhost:3000/uploads/experiences/chongoni.jpg">
+
+<i class="bi bi-heart"></i>
+
+Add to Favourites
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+    <!-- Footer -->
+
+        <footer class="dashboard-footer">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <a href="destinations.html">Destinations</a>
+
+                    <a href="accommodation.html">Accommodation</a>
+
+                    <a href="tours.html">Tours</a>
+
+                    <a href="experiences.html">Experiences</a>
+
+                </div>
+
+                <div>
+
+                    <h5>
+
+                        Contact
+
+                    </h5>
+
+                    <!-- Location -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Blantyre+Malawi" target="_blank"
+                        class="contact-btn">📍 Blantyre, Malawi</a>
+
+                    <!-- Phone -->
+                    <a href="tel:+265991273980" class="contact-btn">📞 +265 999 99 99 99</a>
+
+                    <!-- Email -->
+                    <a href="mailto:trav3lawi@gmail.com" class="contact-btn"> ✉️ trav3lawi@gmail.com</a>
+                </div>
+
+
+            </div>
+
+            <div>
+
+                <h5>
+
+                    Follow Us
+
+                </h5>
+
+                <div class="social-buttons">
+
+                    <a href="https://www.instagram.com/trave.lawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-instagram"></i> Instagram
+                    </a>
+
+                    <a href="https://www.tiktok.com/@trave.lawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-tiktok"></i> TikTok
+                    </a>
+
+                    <a href="https://twitter.com/travelawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-twitter-x"></i> Twitter (X)
+                    </a>
+
+                    <a href="https://linktr.ee/trave.lawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-link-45deg"></i> Linktree
+                    </a>
+
+                </div>
+
+                <div class="row align-items-center justify-content-center text-center">
+
+                 © 2026 TRAVELAWI
+
+                </div>
+
+            </div>
+
+        </footer>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+<a href="tourist-dashboard.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-grid-fill"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="destinations.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+<span>Destinations</span>
+
+</a>
+
+<a href="accommodation.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-building-fill"></i>
+
+<span>Accommodation</span>
+
+</a>
+
+<a href="tours.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-bus-front-fill"></i>
+
+<span>Tours</span>
+
+</a>
+
+<a href="#menuPanel">
+
+<i class="bi bi-list"></i>
+
+<span>More</span>
+
+</a>
+
+</nav>
+
+</div>
+
+</body>
+
+</html>

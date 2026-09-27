@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRAVELAWI | Admin Dashboard</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/jquery.mobile.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="js/logout.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/admin.js"></script>
+
+</head>
+
+
+<body class="dashboard-page">
+
+<div data-role="page">
+
+<!-- ==========================
+        MOBILE OVERLAY
+=========================== -->
+
+<div class="sidebar-overlay"></div>
+
+<!-- ==========================
+        Slide out menu
+=========================== -->
+<div data-role="panel"
+     id="menuPanel"
+     data-display="overlay"
+     data-position="left">
+
+    <div class="text-center mb-3">
+
+        <img src="images/travelawi-logo.png"
+             class="panel-logo">
+
+        <h3>
+
+            TRAVELAWI
+
+        </h3>
+
+        <small>Admin Panel</small>
+
+    </div>
+
+    <ul data-role="listview">
+
+<li><a href="admin-dashboard.html">Dashboard</a></li>
+
+<li><a href="admin-users.html">Manage Users</a></li>
+
+<li><a href="admin-destinations.html">Destinations</a></li>
+
+<li><a href="admin-accommodation.html">Accommodation</a></li>
+
+<li><a href="admin-tours.html">Tours</a></li>
+
+<li><a href="admin-bookings.html">Bookings</a></li>
+
+<li><a href="admin-reviews.html">Reviews</a></li>
+
+<li><a href="admin-reports.html">Reports</a></li>
+
+<li><a href="#" id="logoutBtn">Logout</a></li>  
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="dashboard-main">
+
+<header class="accommodation-header">
+
+<a href="#menuPanel"
+       class="menu-toggle"
+       data-transition="slide">
+
+        <i class="bi bi-list"></i>
+
+    </a>
+
+<div>
+
+<h2>
+
+Welcome, <span id="welcomeName"></span>
+
+</h2>
+
+
+<p>
+
+Monitor and manage the TRAVELAWI platform as our Admin
+
+
+</p>
+
+
+</div>
+
+
+</header>
+
+<!-- STAT CARDS -->
+
+<section class="dashboard-section">
+
+    <div class="row g-5">
+
+        <!-- USERS -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <a href="admin-users.html"
+               class="dashboard-link"
+               data-ajax="false">
+
+                <div class="dashboard-card clickable-card">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <h3 id="totalUsers">
+                        0
+                    </h3>
+
+                    <p>
+                        Manage Users
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- ACCOMMODATION -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <a href="admin-accommodation.html"
+               class="dashboard-link"
+               data-ajax="false">
+
+                <div class="dashboard-card clickable-card">
+
+                    <i class="bi bi-building-fill"></i>
+
+                    <h3 id="totalAccommodation">
+                        0
+                    </h3>
+
+                    <p>
+                        Accommodation
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- DESTINATIONS -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <a href="admin-destinations.html"
+               class="dashboard-link"
+               data-ajax="false">
+
+                <div class="dashboard-card clickable-card">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                    <h3 id="totalDestinations">
+                        0
+                    </h3>
+
+                    <p>
+                        Destinations
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- BOOKINGS -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <a href="admin-bookings.html"
+               class="dashboard-link"
+               data-ajax="false">
+
+                <div class="dashboard-card clickable-card">
+
+                    <i class="bi bi-calendar-check-fill"></i>
+
+                    <h3 id="totalBookings">
+                        0
+                    </h3>
+
+                    <p>
+                        Bookings
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUICK INSIGHTS -->
+
+<section class="dashboard-section">
+
+
+<h3 class="section-title">
+TRAVELAWI Insights
+</h3>
+
+
+
+<div class="row g-5">
+
+
+
+<div class="col-lg-4 col-md-6">
+
+
+<div class="insight-card clickable-card">
+
+
+<i class="bi bi-heart-fill"></i>
+
+
+<h5>
+Most Favourited
+</h5>
+
+
+<p id="mostFavourite">
+Loading...
+</p>
+
+
+<a href="admin-reports.html">
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="col-lg-4 col-md-6">
+
+
+<div class="insight-card clickable-card">
+
+
+<i class="bi bi-fire"></i>
+
+
+<h5>
+Most Booked
+</h5>
+
+
+<p id="mostBooked">
+Loading...
+</p>
+
+
+<a href="admin-bookings.html">
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="col-lg-4 col-md-6">
+
+
+<div class="insight-card clickable-card">
+
+
+<i class="bi bi-person-plus-fill"></i>
+
+
+<h5>
+Newest User
+</h5>
+
+
+<p id="newUser">
+Loading...
+</p>
+
+
+<a href="admin-users.html">
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+<!-- RECENT ACTIVITY -->
+
+<section class="dashboard-section">
+
+
+<h3 class="section-title">
+Recent Activity
+</h3>
+
+
+
+<div class="activity-container" id="recentActivity">
+
+
+<!-- Activities load here -->
+
+
+<div class="activity-card">
+
+<i class="bi bi-clock-history"></i>
+
+<p>
+Loading recent activity...
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- Footer -->
+
+<footer class="dashboard-footer">
+
+<div class="footer-grid">
+
+<div>
+
+<h5>
+
+Quick Links
+
+</h5>
+
+<a href="admin-users.html">Manage Users</a>
+
+<a href="admin-accommodation.html">Manage Accommodation</a>
+
+<a href="admin-tours.html">Manage Tours</a>
+
+<a href="admin-reports.html">Reports</a>
+
+</div>
+
+<div>
+
+<h5>
+
+Contact
+
+</h5>
+
+ <!-- Location -->
+    <a href="https://www.google.com/maps/search/?api=1&query=Blantyre+Malawi"
+       target="_blank"
+       class="contact-btn">📍 Blantyre, Malawi</a>
+
+    <!-- Phone -->
+    <a href="tel:+265991273980" class="contact-btn">📞 +265 999 99 99 99</a>
+
+    <!-- Email -->
+    <a href="mailto:trav3lawi@gmail.com" class="contact-btn"> ✉️ trav3lawi@gmail.com</a>
+        </div>
+
+
+</div>
+
+<div>
+
+<h5>
+
+Follow Us
+
+</h5>
+
+<div class="social-buttons">
+
+    <a href="https://www.instagram.com/trave.lawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-instagram"></i> Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@trave.lawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-tiktok"></i> TikTok
+    </a>
+
+    <a href="https://twitter.com/travelawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-twitter-x"></i> Twitter (X)
+    </a>
+
+    <a href="https://linktr.ee/trave.lawi" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-link-45deg"></i> Linktree
+    </a>
+
+</div>
+
+<div class="row align-items-center justify-content-center text-center">
+
+© 2026 TRAVELAWI
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+<a href="admin-dashboard.html" 
+   class="active"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-grid-fill"></i>
+
+Dashboard
+
+</a>
+
+<a href="admin-users.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-people-fill"></i>
+
+Manage Users
+
+</a>
+
+<a href="admin-reviews.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-star-fill"></i>
+
+Reviews
+
+</a>
+
+<a href="admin-reports.html"
+   data-transition="slide"
+   data-ajax="false">
+
+<i class="bi bi-file-earmark-bar-graph-fill"></i>
+
+Reports
+
+</a>
+
+<a href="#menuPanel">
+
+<i class="bi bi-list"></i>
+
+<span>More</span>
+
+</a>
+
+</nav>
+
+</div>
+
+</body>
+
+</html>

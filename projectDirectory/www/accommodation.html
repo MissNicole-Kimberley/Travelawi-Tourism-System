@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRAVELAWI | Accommodation</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/jquery.mobile.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/tourist.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/favourites.js"></script>
+    <script src="js/bookings.js"></script>
+    <script src="js/accommodation.js"></script>
+
+</head>
+
+<body class="dashboard-page">
+
+    <div data-role="page">
+
+        <!-- ==========================
+        MOBILE OVERLAY
+=========================== -->
+
+        <div class="sidebar-overlay"></div>
+
+        <!-- ==========================
+        Slide out menu
+=========================== -->
+        <div data-role="panel" id="menuPanel" data-display="overlay" data-position="left">
+
+            <div class="text-center mb-3">
+
+                <img src="images/travelawi-logo.png" class="panel-logo">
+
+                <h3>
+
+                    TRAVELAWI
+
+                </h3>
+
+            </div>
+
+            <ul data-role="listview">
+
+                <li><a href="tourist-dashboard.html" data-transition="slide" data-ajax="false">Dashboard</a></li>
+
+                <li><a href="destinations.html" data-transition="slide" data-ajax="false">Destinations</a></li>
+
+                <li><a href="accommodation.html" data-transition="slide" data-ajax="false">Accommodation</a></li>
+
+                <li><a href="tours.html" data-transition="slide" data-ajax="false">Tours</a></li>
+
+                <li><a href="experiences.html" data-transition="slide" data-ajax="false">Experiences</a></li>
+
+                <li><a href="bookings.html" data-transition="slide" data-ajax="false">Bookings</a></li>
+
+                <li><a href="favourites.html" data-transition="slide" data-ajax="false">Favourites</a></li>
+
+                <li><a href="reviews.html" data-transition="slide" data-ajax="false">Reviews</a></li>
+
+                <li><a href="#" id="logoutBtn" data-transition="slide" data-ajax="false">Logout</a></li>
+
+            </ul>
+
+        </div>
+
+        <header class="accommodation-header">
+
+            <a href="#menuPanel" class="menu-toggle" data-transition="slide">
+
+                <i class="bi bi-list"></i>
+
+            </a>
+
+            <h2>Find Accommodation</h2>
+
+            <p>
+                Discover comfortable places to stay across Malawi.
+            </p>
+
+        </header>
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <input type="text" id="accommodationSearch" placeholder="Search accommodation...">
+
+            <button>
+
+                <i class="bi bi-search"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="container" <div class="accommodation-grid" id="accommodationContainer">
+
+        </div>
+
+        <!-- Footer -->
+
+        <footer class="dashboard-footer">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <a href="destinations.html">Destinations</a>
+
+                    <a href="accommodation.html">Accommodation</a>
+
+                    <a href="tours.html">Tours</a>
+
+                    <a href="experiences.html">Experiences</a>
+
+                </div>
+
+                <div>
+
+                    <h5>
+
+                        Contact
+
+                    </h5>
+
+                    <!-- Location -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Blantyre+Malawi" target="_blank"
+                        class="contact-btn">📍 Blantyre, Malawi</a>
+
+                    <!-- Phone -->
+                    <a href="tel:+265991273980" class="contact-btn">📞 +265 999 99 99 99</a>
+
+                    <!-- Email -->
+                    <a href="mailto:trav3lawi@gmail.com" class="contact-btn"> ✉️ trav3lawi@gmail.com</a>
+                </div>
+
+
+            </div>
+
+            <div>
+
+                <h5>
+
+                    Follow Us
+
+                </h5>
+
+                <div class="social-buttons">
+
+                    <a href="https://www.instagram.com/trave.lawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-instagram"></i> Instagram
+                    </a>
+
+                    <a href="https://www.tiktok.com/@trave.lawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-tiktok"></i> TikTok
+                    </a>
+
+                    <a href="https://twitter.com/travelawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-twitter-x"></i> Twitter (X)
+                    </a>
+
+                    <a href="https://linktr.ee/trave.lawi" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-link-45deg"></i> Linktree
+                    </a>
+
+                </div>
+
+                <div class="row align-items-center justify-content-center text-center">
+
+                 © 2026 TRAVELAWI
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    <!-- Bottom Navigation -->
+
+    <nav class="bottom-nav">
+
+        <a href="tourist-dashboard.html" data-transition="slide" data-ajax="false">
+
+            <i class="bi bi-grid-fill"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+        <a href="destinations.html" data-transition="slide" data-ajax="false">
+
+            <i class="bi bi-geo-alt-fill"></i>
+
+            <span>Destinations</span>
+
+        </a>
+
+        <a href="accommodation.html" data-transition="slide" data-ajax="false">
+
+            <i class="bi bi-building-fill"></i>
+
+            <span>Accommodation</span>
+
+        </a>
+
+        <a href="tours.html" data-transition="slide" data-ajax="false">
+
+            <i class="bi bi-bus-front-fill"></i>
+
+            <span>Tours</span>
+
+        </a>
+
+        <a href="#menuPanel">
+
+            <i class="bi bi-list"></i>
+
+            <span>More</span>
+
+        </a>
+
+    </nav>
+
+      </div>
+
+    <!-- =========================
+        BOOKING MODAL
+========================= -->
+
+    <div class="modal fade"
+     id="bookingModal" 
+     tabindex="-1"
+     >
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h4 class="modal-title">
+
+                        Complete Your Booking
+
+                    </h4>
+
+                    <button type="button" 
+                    class="btn-close"
+                     data-bs-dismiss="modal">
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="bookingForm">
+
+                        <!-- Hidden values -->
+
+                        <input type="hidden" id="bookingItem">
+
+                        <input type="hidden" id="bookingType">
+
+                        <input type="hidden" id="bookingAccommodationID">
+
+
+                        <!-- Full Name -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Full Name
+
+                            </label>
+
+                            <input type="text" id="fullName" class="form-control" required>
+
+                        </div>
+
+                        <!-- Guests -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Number of Guests
+
+                            </label>
+
+                            <input type="number"
+                            id="guests"
+                            class="form-control"
+                            min="1"
+                            value="1"
+                            required>
+
+                        </div>
+
+                        <!-- Check In -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Check-in / Departure
+
+                            </label>
+
+                            <input type="date" id="checkIn" class="form-control" required>
+
+                        </div>
+
+                        <!-- Check Out -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Check-out / Return
+
+                            </label>
+
+                            <input type="date" id="checkOut" class="form-control" required>
+
+                        </div>
+
+                        <hr>
+
+                        <h5>
+
+                            Payment Details
+
+                        </h5>
+
+                        <!-- Card Number -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Card Number
+
+                            </label>
+
+                            <input type="text" id="cardNumber"
+                            maxlength="19" class="form-control"
+                            placeholder="1234 5678 9012 3456" 
+                            inputmode="numeric"
+                            autocomplete="cc-number" 
+                            required>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Expiry Date
+
+                                </label>
+
+                                <input type="month" id="expiry" class="form-control" required>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    CVV
+
+                                </label>
+
+                                <input type="password" id="cvv" 
+                                class="form-control" 
+                                maxlength="3"
+                                inputmode="numeric"
+                                autocomplete="cc-csc"
+                                 required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mt-4">
+
+                            <button id="confirmBooking" class="dashboard-btn w-100" type="submit">
+
+                                Confirm Booking
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
