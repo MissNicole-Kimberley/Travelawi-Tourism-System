@@ -28,7 +28,7 @@ Technologies Used:
 - Git and GitHub
 
 Project Type:
-Academic Project – Mobile Application Development (MAD411)
+Academic Project – Mobile Application Development 
 
 Author:
 Nicole Kimberley Edward
